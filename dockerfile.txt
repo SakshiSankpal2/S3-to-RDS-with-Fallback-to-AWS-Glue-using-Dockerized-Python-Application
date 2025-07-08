@@ -1,0 +1,15 @@
+# Use official Python image
+FROM python:3.10-slim
+
+# Set working dir
+WORKDIR /app
+
+# Copy files
+COPY requirements.txt requirements.txt
+COPY main.py main.py
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run script
+CMD ["python", "main.py"]
